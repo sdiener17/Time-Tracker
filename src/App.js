@@ -5,6 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import HomePage from "./components/homepage/HomePage";
+import SemesterPage from "./components/semesterpage/SemesterPage";
 
 
 export default function App() {
@@ -54,6 +55,10 @@ export default function App() {
                 exact
                 path="/"
                 element={<HomePage/>}
+              />
+              <Route
+                exact path="/semesterpage"
+                element={<SemesterPage/>}
               />
               
 
