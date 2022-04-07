@@ -1,8 +1,13 @@
 import React, {useState, useEffect} from "react";
 import './App.css';
+import styled from "styled-components";
+import { Route, Routes } from "react-router-dom";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import HomePage from "./components/homepage/HomePage";
 
 
-function App() {
+export default function App() {
   const [error,setError] = useState(null);
 
 
@@ -38,10 +43,29 @@ function App() {
   },[])
 
   return (
-    <div className="App">
-      <div>Hello world</div>
-    </div>
+    <PageWrapper>
+
+        <Header />
+          <div >
+            {/* <NavBar /> */}
+            {/* <img src={logo} className="App-logo" alt="logo" /> */}
+            <Routes>
+              <Route
+                exact
+                path="/"
+                element={<HomePage/>}
+              />
+              
+
+            </Routes>
+          </div>
+        <div className="separaterBottomFooter" />
+        <Footer />
+    </PageWrapper>
   );
 }
 
-export default App;
+
+const PageWrapper = styled.div`
+
+`;
