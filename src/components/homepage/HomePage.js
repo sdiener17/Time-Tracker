@@ -49,6 +49,14 @@ export default function HomePage(){
                 dayofweek:result.maxday.dayofweek,
                 weeknumber:result.maxday.weeknumber
             });
+            let thrs = parseFloat(result.maxweek.hours).toFixed(4);
+            setMaxWeek({
+                hours:thrs,
+                weeknumber:result.maxweek.weeknumber,
+                classification:result.maxweek.classification,
+                season:result.maxweek.season,
+                semesteryear:result.maxweek.semesteryear
+            });
 
 
           } catch (e) {
@@ -70,16 +78,16 @@ export default function HomePage(){
     return(
         <PageWrapper>
             <div className="bubble">
-                Average Time Spent on Schoolwork Per Day Across All Semesters: {averagePerDayAll}
+                Average Time Spent on Schoolwork Per Day Across All Semesters: {averagePerDayAll} Hours
             </div>
             <div className="bubble">
-                Total Time Spent on Schoolwork Across All Semesters: {totalHours}
+                Total Time Spent on Schoolwork Across All Semesters: {totalHours} Hours
             </div>
             <div className="bubble">
-                Max Time in a Day Spent on Schoolwork: {maxDay.maxtime} on {maxDay.dayofweek}, {maxDay.schooldate}, Week Number: {maxDay.weeknumber}
+                Max Time in a Day Spent on Schoolwork: {maxDay.maxtime} Hours on {maxDay.dayofweek}, {maxDay.schooldate}, Week Number: {maxDay.weeknumber}
             </div>
             <div className="bubble">
-                Max Time in a Week Spent on SchoolWork: {maxWeek.hours} in week {maxWeek.weeknumber}, {maxWeek.classification} {maxWeek.season} of {maxWeek.semesteryear}
+                Max Average Time in a Week Spent on Schoolwork: {maxWeek.hours} Hours in Week {maxWeek.weeknumber}, {maxWeek.classification} {maxWeek.season} of {maxWeek.semesteryear}
             </div>
             <div className="marginForFooter"/>
         </PageWrapper>
